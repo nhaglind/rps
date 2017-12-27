@@ -1,6 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
-let games = 2;
+let games = 5;
 
 function computerWin() {
   computerScore++;
@@ -27,9 +27,7 @@ function computerPlay() {
 }
 
 function userPlay() {
-  unformmattedReponse = prompt("Rock, paper, scissors?");
-  formattedResponse = unformmattedReponse.toLowerCase();
-  return formattedResponse; 
+  return formattedResponse = prompt("Rock, paper, scissors?").toLowerCase();;
 }
 
 function playRound(playerSelection, computerSelection) {

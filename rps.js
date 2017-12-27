@@ -1,6 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
-let games = 5;
+let games = 2;
 
 function computerWin() {
   computerScore++;
@@ -78,7 +78,9 @@ function game() {
     playRound(playerSelection, computerSelection);
     computerPlay();
   }
+  if (playerScore == computerScore) {
+    console.log(`It's a tie! You both earned ${playerScore} points.`)
+  } else {
   playerScore > computerScore ? console.log(`Congratulations, you win with a score of ${playerScore} compared to ${computerScore}!`) : console.log(`Sorry, you lose with a score of ${playerScore} compared to ${computerScore}.`);
+  }
 }
-
-game();

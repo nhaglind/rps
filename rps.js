@@ -1,7 +1,6 @@
-
-
 let playerScore = 0;
 let computerScore = 0;
+let games = 5;
 
 function computerWin() {
   computerScore++;
@@ -25,6 +24,12 @@ function computerPlay() {
       break;
   }
   return computerSelection;
+}
+
+function userPlay() {
+  unformmattedReponse = prompt("Rock, paper, scissors?");
+  formattedResponse = unformmattedReponse.toLowerCase();
+  return formattedResponse; 
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -66,13 +71,14 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-  for (var i = 0; i < 5; i++) {
-    const playerSelection = "paper";
+  for (var i = 0; i < games; i++) {
+    const playerSelection = userPlay();
     const computerSelection = computerPlay();
+    console.log(playerSelection);
     playRound(playerSelection, computerSelection);
     computerPlay();
   }
-  console.log(`**Final Score**\nPlayer: ${playerScore} Computer: ${computerScore}`);
+  playerScore > computerScore ? console.log(`Congratulations, you win with a score of ${playerScore} compared to ${computerScore}!`) : console.log(`Sorry, you lose with a score of ${playerScore} compared to ${computerScore}.`);
 }
 
 game();
